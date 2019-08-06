@@ -1,6 +1,6 @@
 
 .t1{color: #1D184E; font-size: 50px; font-family: 'Grenze', serif;}
-.t2{color: #332E68; font-size: 25px; font-family: fantasy;}
+.t2{color: white; font-size: 25px; font-family: fantasy;}
 
     
 /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -12,7 +12,7 @@
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {
         height: 450px;
-        background-color: #9692B6;
+        background-color: #5378c6;
     }
     
     /* Set gray background color and 100% height */
@@ -37,4 +37,10 @@
       }
       .row.content {height:auto;} 
     }
->>>>>>> 0cbf78adccb5b98f119f52b1ef056603ccee8d2f
+
+    h1 {
+      background-color: #5b87e4;
+      color: #1D184E;
+      padding: 5px; 
+    }
+
