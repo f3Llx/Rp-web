@@ -211,27 +211,28 @@ require_once("main.php");
                 <div class="col s3"></div>
                 <div class="col s6">
 
-                    <form class="login-form">
+                    <form class="login-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                         <div class="row">
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="material-icons prefix">mail_outline</i>
-                                <input class="validate" id="email" type="email">
-                                <label for="email" data-error="wrong" data-success="right">Email</label>
+                                <i class="material-icons prefix">email</i>
+                                <input type="text" name="username_log">
+                                <label  data-error="wrong" data-success="right">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input id="password" type="password">
+                                <input id="password" type="password" name="password_log">
                                 <label for="password">Password</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <center> <a href="#" class="btn waves-effect waves-light col s4">Login</a></center>
+                            <center> <button class="btn waves-effect waves-light col s4" type="submit" name="Log_me_in">Login</button></center>
+                                
                             </div>
                         </div>
                         <div class="row">
@@ -256,22 +257,23 @@ require_once("main.php");
     <div class="modal-content">
       <h4 style="color:#595C64 ">Registration Form</h4>
       <div class="row">
-    <form class="col s12" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+    <form class="col s12" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post" id="form-register">
      
       <div class="row">
         <div class="input-field col s12">
-        <input id="username" type="text" class="validate" name="Username">
+        <input id="username" type="text" class="validate" name="Username" required>
           <label for="username">Username</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" name="Password">
+          
+          <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
           <label for="password">Password</label>
           
         </div>
         <div class="input-field col s12">
-        <input id="password" type="password" class="validate" name="Password2">
+        <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
           <label for="password">Password Confirmation</label>
           </div>
       </div>
@@ -306,9 +308,38 @@ require_once("main.php");
     <div class="o-circle__sign"></div>  
   </div>   
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
   </div>
   </div>
+  <!-- Modal Structure -->
+<div id="Login_Error" class="modal">
+  <div class="modal-content" style="color: rgba( 89, 92,100,1)">
+    <h4>Bad Credentials</h4>
+    <h5>Check that your email or password is correct!</h5>
+    
+  </div>
+  <div class="o-circle c-container__circle o-circle__sign--failure">
+    <div class="o-circle__sign"></div>  
+  </div>   
+  <div class="modal-footer">
+    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+  </div>
+  </div>
+  <!-- Modal Structure -->
+<div id="Register_Success" class="modal">
+  <div class="modal-content" style="color: rgba( 89, 92,100,1)">
+    <h4>Congratulations!</h4>
+    <h5>You're In!</h5>
+    
+  </div>
+  <div class="o-circle c-container__circle o-circle__sign--success">
+    <div class="o-circle__sign"></div>  
+  </div>   
+  <div class="modal-footer">
+    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+  </div>
+  </div>
+    
     </body>
 
 
@@ -395,6 +426,8 @@ require_once("main.php");
             $("#contactN").addClass('active');
 
         });
+
+        
 
 
     </script>

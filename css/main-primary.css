@@ -413,7 +413,7 @@ input {
 
 /*--shadow--*/
 .o-circle__sign--success .o-circle__sign::after {
-   background: rgb(40, 128, 96);
+   background: rgba(40, 128, 96, 0);
 }
  
 
@@ -422,7 +422,7 @@ input {
 =========================*/
 
 .o-circle__sign--failure {
-  background: rgb(236, 78, 75);
+  background: rgb(121, 118, 118);
 }
 
 .o-circle__sign--failure .o-circle__sign {
@@ -441,7 +441,7 @@ input {
 
 /*--shadow--*/
 .o-circle__sign--failure .o-circle__sign::after {
-   background: rgba(175, 57, 55, .8);
+   background: rgba(175, 57, 55, 0);
 }
 
 
